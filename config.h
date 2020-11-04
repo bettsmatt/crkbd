@@ -32,8 +32,12 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #define USE_SERIAL_PD2
 
-#define TAPPING_FORCE_HOLD
+// Breaks ONESHOT_TAP_TOGGLE
+// Should be fine, only used on space / enter.
+// #define TAPPING_FORCE_HOLD
 #define TAPPING_TERM 250
+
+#define ONESHOT_TAP_TOGGLE 2
 
 #define MK_3_SPEED
 #define MOUSEKEY_INTERVAL 16
