@@ -37,13 +37,13 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 // #define TAPPING_FORCE_HOLD
 #define TAPPING_TERM 250
 
-#define ONESHOT_TAP_TOGGLE 2
+#define ONESHOT_TAP_TOGGLE 3
 
-#define MK_3_SPEED
-#define MOUSEKEY_INTERVAL 16
-#define MK_C_OFFSET_0 2
-#define MK_C_OFFSET_1 4
-#define MK_C_OFFSET_2 16
+// #define MK_3_SPEED
+// #define MOUSEKEY_INTERVAL 16
+// #define MK_C_OFFSET_0 2
+// #define MK_C_OFFSET_1 4
+// #define MK_C_OFFSET_2 16
 
 #ifdef RGBLIGHT_ENABLE
     #undef RGBLED_NUM
