@@ -1,74 +1,70 @@
 CRKBD build log and configuration
 
+# Corne?
+
+The [Corne keyboard](https://github.com/foostan/crkbd) is a split keyboard with 3x6 column staggered keys and 3 thumb keys.
+
+The Corne Keyboard is an open source split ergonomic design that features a 3x6 column staggered layout with a three key thumb cluster. There are several things to unpack here:
+
+* The software and hardware designs are open source. There is no manufacturer you have to assemble the parts from a kit or manufacture them yourself.
+* The keyboard is split into two pieces, allowing for a natural wrist angle when typing.
+* The 3x6 layout means fingers resting on the home row never have to move more than one key.
+* The staggered columns provide a more resting position for the fingers on the home row and up / down movement when typing.
+* The thumb clusters move work of the pinky fingers to the thumbs.
+
+
 # Why Corne
 
+I switched from using a regular keyboard to a [Microsoft Sculpt](https://www.microsoft.com/accessories/en-us/products/keyboards/sculpt-ergonomic-desktop/l5v-00001) several years ago to help reduce RSI.
+The ergonomics were great, but I ended up replacing it every year due to wear and tear (mostly switches and stabilizers breaking or keys becoming sticky).
+Instead of replacing it a 4th time I decided to give a regular layout another go and purchased a Keychron K2.
+I would recommend the Keychron to anyone looking for a mechanical keyboard, but after several weeks I began to miss the ergonomics of the Microsoft Sculpt.
+While looking for an ergonomic mechanical keyboard I came across the [Moonlander](https://www.zsa.io/moonlander/) and [Dygma](https://dygma.com/), but I couldn't justify their price tags.
 
-Four years I switched from using a regular keyboard to a Microsoft Sculpt to reduce RSI.
-The ergonomics of the keyboard was great, but I ended up replacing it every year due to wear and tear.
-Mostly switches and stabilizers breaking or keys becoming sticky.
-Instead of replacing it a 5th time I decided to give the standard layout another go and purchased a Keychron K2.
-I would recommend the Keychron to anyone looking for a mechanical keyboard, but after several week of use I began to miss the ergonomics of the sculpt.
-So I started looking for a more ergonomic mechanical keyboard and came across products like the Moonlander and Dygma raise.
-These looked really interesting, but I couldn't bring myself to buy a keyboard quite that expensive.
+Which is when I stumbled across the Corne. It incorporates the same design features, but could be built from a kit at a fraction of the cost. After watching a few videos I decided assembling the kit wasn't beyond my soldering ability.
 
-
-Which is when I stumbled across the Corne. It incorporated the same features in its design, but could be built from a kit at a fraction of the cost.
-I had done a few small hobbyist electronics projects before and after watching a few videos decided building the keyboard wouldn't be too difficult.
-
-
-I had also been actively focusing on improving my typing technique and was looking for something with layers where I didn't need to remove my fingers from the home row.
-Additionally a few things about the standard keyboard layout started to annoy me.
+I had been using https://www.keybr.com/ to improve my typing technique and had become fascinated with the home row, 40% layouts and QMK. I was looking for something where I didn't need to move fingers from the home row and several things about the standard keyboard layout were starting to annoy me.
 * The distance from the home row to backspace and shift keys when typing.
 * The ergonomics of doing shortcuts like copy / paste one handed.
-* How the keys on the right hand are staggered to move with the angle of the arm, but the keys for the left hand are staggered in the opposite direction.
+* The way the stagger of the keys fights against the angle of the left wrist, but works with the right.
 
-
-The Corne has two 6 by 3 grids with three thumb keys.
-Which means all your fingers move at most one key from the home row while typing.
-This includes the shift and backspace keys.
-It is split, so it can be angled like the Microsoft Sculpt.
-Instead of the rows being staggered the columns are staggered, allowing your fingers to rest in a more natural position and move directly up and down when typing.
-The layout is completely customizable using QMK, allowing it to be tailored to specific programs and shortcuts. Beyond layering, QMK provides some really innovative features.
+The Corne solved these issues by being split, using staggered columns instead of rows, making better use of the thumbs and allowing layering with QMK.
 
 # Build Log
 
 ## Parts
 
-I ordered the kit + case + two pro micros from littlekeyboards.com for a total of $61 USD.
-I opted for the hot swappable socket version as as I didn't want to solder the switches directly to the board.
-I didn't buy the RGB LEDs as it is very easy to overheat them when soldering and my soldering wasn't great.
-I purchased two OLED screens, but ended up disabling and removing these.
-I would recommend getting the low profile sockets, so you don't have to solder the board to the controller, I ended up picking these up from a local electronics store.
-
-The switches and keycaps are from kbdfans.
-50 Cherry MX Brown switches cost $22.50 and I bought two packs of DSA PBT keycaps. A plain set for $19 for most of the keys and a dyed set $23.80 for a bit of additional color.
-I also ended up picking up a few screws, sockets, some resistors, and some epoxy from the local electronics store.
-
-
-The real killer was shipping cost to Australia during a Pandemic.
+* Clear Acrylic Case, Corne MX Hotswap PCB Kit, and 2 ProMicros from [littlekeyboards.com](https://www.littlekeyboards.com/collections/corne)
+  * No RGB LEDs as I had read they were easy to burn out when soldering
+  * I didn't order sockets from littlekeyboards, but ended up buying some from a local electronics store. I wanted the ability to remove the pro micro if the USB broke or I bricked it.
+  * I ordered 2 OLED screens but ended up removing them. When used with the sockets sit too tall for the covers and don't really add anything to the design. They were also broken in the release of QMK at the time.
+  * It was easier to find keycaps for the Cherry MX switches than the Kailh Low Profile Choc switches, hence the Corne MX Hotswap PCB Kit. I also wanted the option to swap the switches and this would have been a pain if they had been soldered to the board.
+* Switches and Keycaps from kbdfans.com
+  * Cherry MX brown switches, I had these on the Keychron K2 and they worked fine.
+  * [DSA PBT Plain blank keycaps](https://kbdfans.com/collections/dsa-profile/products/dsa-pbt-60-blank-keycaps)
+  * [DSA PBT Colored blank keycaps](https://kbdfans.com/collections/dsa-profile/products/dsa-pbt-dye-sub-multi-colored-keycaps?variant=34225333239947)
+* A few screws, sockets, resistors (to use the legs for the sockets), and some epoxy from the local electronics store.
 
 ## Assembly
 
-There is an official build guide on the CRKBD github page. You can also find several video guides on youtube, [this one](https://youtu.be/2xmAIC0CmGM) was my favorite. I'm not going to into great detail below as other build guides already do an excellent job.
+There is an official build guide on the CRKBD Github page. You can also find several video guides on like [this]((https://youtu.be/2xmAIC0CmGM)) one on YouTube. I won't go into great detail as other guides already do an excellent job of this.
 
-The didoes were smaller than I thought and I needed to shine a light on them at an angle to figure out their direction.
+The didoes were tiny and I needed to shine a light on them at an angle to figure out their direction.
 The easiest way to solder these and the switch sockets was to apply a tiny bit of solder to each pad, then press the components into place with tweezers while heating them to melt the solder.
-The diodes reheated quickly, with the sockets I found I needed to press the soldering iron into the corner of the pad to give a larger area for better heat transfer.
+The diodes reheated quickly, with the sockets I found I needed to press the soldering iron into the corner of the pad to ensure there was a larger area for better heat transfer.
 
 ![image info](./images/soldering-diodes.jpg)
 ![image info](./images/soldering-sockets.jpg)
 
-I applied EPoxy to the pro micro USB connectors, as they are notorious for breaking.
-I also used sockets and transistor legs to mount the pro micros so they could be removed if this happened. This does mean the pro micros sit higher than normal, which was why I ended up removing the OLED screens to fit the covers on.
+I applied EPoxy to the pro micro USB connectors as they are notorious for breaking. I also used sockets and resistor legs to mount the pro micros so they could be removed if this happened. With sockets the pro micros sit higher than normal and the OLED screens don't fit under the covers.
 
-If you are going to use transistor legs in the sockets, make sure they click into the socket before soldering them.
-On the first board two legs were too short to make a connection with the socket, causing a row of keys to not register.
-I managed to figure this out by shorting different parts of the board but it tool a while and was a pain to resolder.
+Make sure the resistor legs click into the socket before soldering them to the pro micro.
+On the first half two legs were too short to make a connection with the socket, causing a row of keys to not register.
+I managed to figure this out by shorting different parts of the board but it took a while and was a pain to remove the pro micro and de solder the pins.
 
 ![image info](./images/solder-pro-micro.jpg)
 
-On the second board I accidentally shorted one of the pro micro connectors with the reverse set of sockets, causing one key to not register.
-You can see this in the image below (5th pin down on the right hand column) and it was easy enough to unsolder.
+On the second half I accidentally shorted one of the pro micro connectors with a socket on the reverse side of the PCB, causing one key to not register. You can see this in the image below, the 5th pin down on the right hand column has some solder that connects with the col3 socket. It was easy enough to unsolder.
 
 ![image info](./images/shorted-pin.jpg)
 
@@ -77,67 +73,70 @@ The switches, keycaps and case were straight forward to assemble. I did bend the
 ![image info](./images/switches-in-plate.jpg)
 ![image info](./images/switches-and-caps.jpg)
 
-The finished board
+Fully assembled, except the screen covers.
 
 ![image info](./images/initial-done.jpg)
 
-After using the board for a few days I decided to tent / raise it so my writs are at a more natural angle.  I had difficulty finding a plate / case online and ended up cutting some wooden plates that I could screw into the existing case with some longer m2 screws. I covered these in black tape for a nicer finish and used bolts to adjust the height.
+After using the board for a few days I decided to tent it slightly. With the board flat I either needed to rotate my wrists of keep my elbows at an awkward angle. Tenting the boards your elbows to rest at your side and without putting any rotational strain through your writs. I had difficulty finding a tented plate / case online and ended up cutting some wooden plates that I could screw into the existing case with some longer m2 screws. I covered these in black tape for a cleaner finish and used bolts to adjust the height. There are .ai and .dxf files for a tented case in the Github repo but I don't have a laser cutter.
 
 ![image info](./images/tenting-diy.jpg)
-![image info](./images/done-tented-2.jpg)
+![image info](./images/done-tented.jpg)
 
+You will notice I switched back to printed keycaps. Blanks were fine for typing. But horrible when you wanted to perform a specific short cut without anchoring on the home row.
 
 # Keymap
 
-I used the default keymap for a day before starting to modify it to better fit my workflows in Windows, VS Code and typing.
+I used the default keymap for a day before starting to modify it to better fit my workflows in Windows, VS Code, word processing (email, Jira, Teams). My current layout has 4 layers that are activated by holding the center thumb cluster keys. The left thumb activates the symbol layer, the right thumb activates the navigation layer, and both activate the mouse and function layer.
 
-## Current
+## Base layer
 
-### Default
-
-* Qwerty layout, at some point I intend to try colmack or workman, but didn't want to change too much at once. With QMK it should also be easy enough to toggle between these on the keyboard instead of in the OS.
-* OSM modifiers on the left CRTL and Shift keys. These mean if you hold down the key it acts as a normal Ctrl or Shift, but if you tap it the next key press will be modified. This allows you to tap ctrl then c for copy rather than trying to hold both keys down at once with one hand. These are awesome and should be part of a standard keyboard.
-* Alt and Tab is on the sam half, allowing a single hand alt + tab action.
-* The left middle thumb key activates the symbol layer when held. The right middle thumb key activates the navigation layer when held. When both are held the mouse and function layer is activated.
-* Shift and Enter share a key, when held the key acts as shift, when tapped it acts as enter. This is super useful for typing as you can keep your fingers on the home rows and use your thumbs for space, shift and enter. The tap / hold does cause a slight delay to register the difference, this is very noticeable on some keys, but manageable when used on enter with shift.
-* Right thumb ctrl key for two handed shortcuts.
-* No escape key, this replaces tab with either layer is activated. This isn't anywhere as annoying as it sounds as the layers are activated and deactivated by your thumbs instantly.
-
+* Standard Qwerty layout.
+* OSM modifiers on the left Ctrl and Shift. When holding these down they act as normal Ctrl or Shift, when tapped they apply to the next key you press and then deactivate, when tapped three times they stay activated until tapped again. This allows you to tap Ctrl then c rather than holding both keys down at once with one hand. Or lock Ctrl like you would Shift with the caps lock key.
+* Alt + Tab can be activated with a single hand.
+* Shift and Enter share a key, when held the key acts as shift, when tapped it acts as enter. This is useful for typing as you can keep your fingers on the home rows and use your thumbs for space, shift and enter. The tap / hold configuration does cause a slight delay to register the difference between a tap and hold. While noticeable on some keys this is fine with enter.
+* Right thumb ctrl key for more ergonomic two handed shortcuts.
+* Escape and delete are missing. Tab switches to escape on all other layers and delete is present on the symbol layer.
+* A dedicated `_` key in the bottom right corner for typing in `camel_case_without_any_modifier_keys`.
 
 ![image info](./images/layer-0.png)
 
-### Navigation and Number
+## Navigation and Numpad layer
 
-The navigation and number layer is activated by holding down the right thumb.
-* The navigation key cluster is also on the right so any of the navigation keys can be accessed with one hand.
-* Special OSM ctrl + shift key so you can select and navigate by word using a single modifier key.
-* Numbers in their normal positions along the qwerty row. At some point want to experiment with a numpad style number layout on the left side of this layer.
+The navigation and numpad layer is activated by holding down the right thumb.
+
+* The navigation key cluster is also on the right allowing you to browse a document one handed.
+* Originally the numbers ran across the Querty row. These have been moved into a number pad on the left, which allows the arrow keys to sit on the home row.
+* Windows key appears on the left hand side for shortcuts windows + direction shortcuts.
 
 ![image info](./images/layer-1.png)
 
-### Symbol
+## Symbol layer
 
-The symbol layer is activted by holding down the left thumb.
-* Symbols in there normal positions along the qwerty row. Very similar to how you press shift to access these normally. Except you don't have to stretch as far as they are one row lower and you are using your thumb and not your pinky to hold shift.
-* Same modifier keys as navigation and number row for shortcuts like (ctrl, shift, + / - ) to resize text.
-* Additional alt key as you left thumb is already holding down the modifier key and won't be able to press an additional key.
+The symbol layer is activated by holding down the left thumb.
+
+* Shift + number symbols are in their relative positions along the qwerty row.
+* Modifier keys are in the same place on all layers for shortcuts like Ctrl + Shift + `+`.
+* Atl key moved from the thumb cluster as the left thumb is already used to activate this layer.
+* No symbol requires shift to access, which makes them no more awkward than on a normal keyboard. Shift + 9 for ( becomes symbol + `o`.
 
 ![image info](./images/layer-2.png)
 
-### Mouse and function
+## Function layer
 
 * Function keys where the corresponding numbers would be, with the exception of F12, which moves down one.
-* OSM left alt key specifically for shortcuts like atl + F4.
-* Keys for moving the mouse where the navigation keys are, speed modification and clicking on the left side. I haven't really found a use for these, but they are handy if you quickly want to focus a window or move the cursor across the page without taking your hand off the keyboard.
+* Contains infrequently used and some media keys.
 
 ![image info](./images/layer-3.png)
 
 
-### Lessons
-* Try not to move modifier keys around between the the layers. Originally I had most of these switching to fit around other keys and perform specific shortcuts. For example at one stage I used the four home row keys on non default layers for modifiers, but my muscle memory kept trying to use the ctrl and shift keys from the default layer I was using seconds earlier.
-* One handed short cuts. It isn't natural to have both hands hovering over the home row at all times. Make common shortcuts like ctrl+c, alt+tab and down easy to preform with one hand.
-* Don't overuse tab / hold keys, there is a necessary delay when using these to differentiate between a tap and a hold. This is fine on some keys like shift + enter. But I tried using shift on hold on the f + j keys, and the delay would make it look like these keys had not been pressed for a few hundred ms and when typing quickly I would accidentally caps other keys by pressing them before releasing shift.
+## Lessons
 
+* Keep the modifier keys in the same places across layers. I had most of these switching places to fit around other keys and perform specific shortcuts. At one stage I tried using the four home row keys on non default layers for modifiers, but my muscle memory kept using the Ctrl and Shift keys from the default layer.
+* It isn't natural to constantly use a computer with both hands glued to the home row. Figure out what one handed functionality you need to keep. Mine were ctrl + c/v/a/s/f, alt + tab, and up / down / left / right.
+* Don't overuse osm or tab and hold combo keys. There is a delay when using these to differentiate between a tap and a hold. This is fine on some keys like shift + enter. But when I tried using shift when holding the f and j key the delay was too annoying.
+* Touch typing with blanks is fine, but doing anything else is a pain. Especially when you are hunting for a specific key for a shortcut or symbol one handed.
+* Don't do too much with one hand. At one stage I had modifier key on the right navigation layer. The idea was to toggle Shift / Ctrl and then use the arrows, but I kept accidentally toggling. You normally use a second hand for modifiers when navigating on a standard keyboard anyway.
+* Mouse keys were a fun gamic, but I couldn't find a good use for them. I had these on the function layer for a while.
 
 # Useful Commands
 
