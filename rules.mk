@@ -12,3 +12,5 @@ SRC +=  ./lib/glcdfont.c \
 MOUSEKEY_ENABLE     = yes   # Mouse keys
 RGBLIGHT_ENABLE     = no    # Enable WS2812 RGB underlight.
 OLED_DRIVER_ENABLE  = no
+# AUTO_SHIFT_ENABLE   = yes
+TAP_DANCE_ENABLE = yes
