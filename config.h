@@ -28,24 +28,17 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 // #define MASTER_RIGHT
 // #define EE_HANDS
 
-#define SSD1306OLED
+#define OLED_FONT_H "keyboards/crkbd/lib/glcdfont.c"
 
 #define USE_SERIAL_PD2
 
-// #define ONESHOT_TAP_TOGGLE 3
-// Breaks ONESHOT_TAP_TOGGLE
-// #define TAPPING_FORCE_HOLD
 #define TAPPING_TERM 150
 
-// #define AUTO_SHIFT_TIMEOUT 150
-// #define NO_AUTO_SHIFT_SPECIAL
-// #define NO_AUTO_SHIFT_NUMERIC
-
-// #define MK_3_SPEED
-// #define MOUSEKEY_INTERVAL 16
-// #define MK_C_OFFSET_0 2
-// #define MK_C_OFFSET_1 4
-// #define MK_C_OFFSET_2 16
+#define MOUSEKEY_INTERVAL 16
+#define MOUSEKEY_DELAY 0
+#define MOUSEKEY_TIME_TO_MAX 120
+#define MOUSEKEY_MAX_SPEED 7
+#define MOUSEKEY_WHEEL_DELAY 0
 
 #ifdef RGBLIGHT_ENABLE
     #undef RGBLED_NUM
